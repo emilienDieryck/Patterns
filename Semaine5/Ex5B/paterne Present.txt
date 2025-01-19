@@ -1,0 +1,36 @@
+COMPOSITE: 
+
+Icomponent --> Partie
+	operation() --> getNiveau() 
+		    --> demande()
+
+Leaf --> Valeur
+Composite --> Groupe
+
+
+VISITOR:
+
+Client = Main
+Element = Partie
+	accept() = demande()
+
+ConcreteElement = Valeur, Groupe
+Visitor = Traitement
+	visit() = traiteValeur(), traiteGroupe()
+ConcreteVisitor = Listeur, Totaliseur, ListeurNom
+
+
+BUILDER:
+
+Director = Lecteur
+	construct() -> construire()
+
+Builder = Fabriquant
+	buildPart() -> construireGroupe(), construireValeur()
+	getResult() -> getResult()
+
+ConcreteBuilder = Fabriquant
+	
+Product = Partie
+
+

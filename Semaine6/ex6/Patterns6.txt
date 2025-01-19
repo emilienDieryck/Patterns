@@ -1,0 +1,57 @@
+OBSERVEUR :
+
+	Subject --> JeuDeLaVie
+
+	ObserverCollection -> List<Espion>
+	registerObserver -> attacher()
+	UnregisterObserver -> détacher()
+	notifObserver -> prevenirEspion()
+
+	Observer -> Espion
+	Update -> utiliserRenseignement()
+
+	ConcreteObserver -> JeuDeLaVieGUI
+
+
+STATE :
+	Context -> Cellule 
+		-request : toggle(), vit(), meurt(), estVivante(), 							ajouterAuxVoisinsVivants(), generer()
+
+	State : Situation 
+		-handle : toggle(), vit(), meurt(), estVivante(), 
+				ajouterAuxVoisinsVivants(), generer()
+
+	ConcreteState : EstVivante, EstMorte 
+		-handle : toggle()
+
+
+COMMAND :
+	Command -> Activite
+		-execute() --> activer()
+
+	ConcreteCommand -> Meurt , Vit
+
+	Client -> JeuDeLaVieGUI
+
+	Invoker -> JeuDeLaVie
+
+	Receiver -> Cellule
+
+	
+
+SINGLETON :
+	Singleton : EstVivant et EstMort
+		-Singleton() --> estMort(), estVivant()
+		getInstance() --> EstMort , EstVivant
+
+Visitor :
+
+	Visitor -> Parcourir
+		
+	
+
+
+
+	
+	
+	

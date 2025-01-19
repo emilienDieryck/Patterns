@@ -1,0 +1,20 @@
+Template methode :
+
+Abstarct Class --> DwarvenMineWorker
+
+Template Methode --> action() 
+Primitive Operation --> work() name(): -- goToSleep() - wakeUp() ,...
+
+ConcreteClass --> DwarvenCartOperator
+		- DwarvenGoldDigger
+		- DwarvenTunnelDigger
+
+
+Facade : 
+
+
+Client --> main
+
+Facade --> DwarvenGoldmine
+
+ComplicatedClass --> DwarvenCartOperator , DwarvenGoldDigger, DwarvenMineWorker , DwarvenTunnelDigger

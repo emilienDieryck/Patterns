@@ -1,0 +1,113 @@
+1.Template methode 
+
+-car classe abstarct avec methode concrete methode draw 
+	qui fait appel à la methode abstract drawborder
+
+
+AbstractClass : Shape
+	-draw()
+	-drawBorder()
+
+
+ConcreteClass : Circle  --  Polygon 
+	-drawBorder()
+	
+
+
+
+2.Iterator:
+
+	-Iterator: ShapeIterator
+	-concreteIterator : shapeIterator
+		next() : next()
+		hasnext() : hasnext()
+	-Aggregate : ShapeVector
+	-concreteAggregate : ShapeVector()
+		iterator() : iterator()
+	
+
+3.Strategie 
+
+	-Strategie: ShapeMutationStrategy
+		execute() : mutate()
+
+	-concreteStrategie : GeneralShapeMutationStrategy
+		execute() : mutate()
+
+	-concreteStrategie : ExplodeShapeMutationStrategy
+		execute() : mutate()
+	
+	-context : Kaleidoscope
+
+4.Observer
+	
+	-Observer : KaleidoscopeView
+		-update() : update()
+	
+	-Subject : kaleidoscope
+		registerObserver() : register()
+		notifyObersver : turn()
+	
+	ConcreteObserver : 
+			FlipK...view	
+			NegativeK...view
+			RotateK...view
+			TraditionalK...view
+	
+
+
+5.Prototype
+	-client : 
+		FlipK...view
+		NegativeK...view
+		Rotatek...view
+		TraditionalK...view
+
+	-Prototype: shape
+		clone() : copy()
+
+	concretePrototype : Circle ,Rectangle, Square , Triangle
+
+		²
+6. Abstarct Factory 
+	
+	Client : kaleidoscope
+
+	AbstarctFactory : ShapeFactory
+	
+	ConcreteFactory : GeneralShapeFactory / CircleFactory
+		abstarctProduct : shape
+		
+	ProductA : Triangle , Circle , Rectangle , Square 
+	CreateProduct1 : createShape()
+
+7. Composite (OK)
+
+- IComponent : ShapeMutationStrategy ___interface ou abstraite___
+- Leaf : ___Toutes les classes qui extends ShapeMutationStrategy___
+  - ExplodeShapeMutationStrategy
+  - GeneralShapeMutationStrategy
+  - GrowShapeMutationStrategy
+  - ImplodeShapeMutationStrategy
+  - SpinShapeMutationStrategy
+- Composite : CompositeShapeMutationStrategy ___extends ShapeMutationStrategy___
+
+
+8. Template Methode 
+	AbstractClass : kaleidoscope
+	TemplateMethode : paint()
+
+	PrimitiveOperation : drawShape()
+
+	ConcreteClass : 
+		FlipK...view
+		NegativeK...view
+		Rotatek...view
+		TraditionalK...view
+
+9. Oberserveur : KaleidoscopeControl
+
+10. ShapeVector : Adaptateur transforme une arraylist en shapeVector
+
+		
+	
